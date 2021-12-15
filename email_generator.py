@@ -32,7 +32,7 @@ def email_senha():
         vars_all = lower + upper + numbers + symbols
 
         # Tamanho da senha
-        length = int(input('\nDigite o tamanho da sua senha (Limite de senha - 73)): '))
+        length = int(input('\nDigite o tamanho da sua senha (Limite de senha: 73)): '))
 
         if length > 73:
             print('\nSenha muito grande tente uma menor...')
