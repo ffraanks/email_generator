@@ -3,8 +3,7 @@
 import random
 import os
 import time
-
-# Dados aleatorios
+import sys
 
 def email_senha():
 
@@ -16,9 +15,29 @@ def email_senha():
     caracteres = '_', '-', ''
 
     caracteres_random= random.choice(caracteres)
-    final = random.randint(1,100)
+    final = random.randint(1, 100)
 
-    nome = str(input('Digite um nome para o seu email: '))
+    print('Provedores de email disponiveis: Gmail, Protonmail, Hotmail\n')
+
+    email_create = str(input('Digite qual provedor de email você quer (LEMBRE-SE: Digitar tudo em minusculo): '))
+
+    if email_create == 'gmail':
+        print('')
+        time.sleep(1)
+
+    elif email_create == 'protonmail':
+        print('')
+        time.sleep(1)
+
+    elif email_create == 'hotmail':
+        print('')
+        time.sleep(1)
+    else:
+        print('\nProvedor indisponivel no momento...')
+        time.sleep(4)
+        email_senha()
+
+    nome = str(input('\nDigite um nome para o seu email: '))
     sobrenome = str(input('\nDigite o seu sobrenome para complementar no email: '))
 
     try:
@@ -41,11 +60,13 @@ def email_senha():
 
         # Gerando a senha
         password = ''.join(random.sample(vars_all , length))
-        print (f'\nEmail: {nome}{caracteres_random}{sobrenome}{final}@gmail.com')
-        print(f'\nSenha: {password}')
+        os.system('clear')
+        print(f'Email: {nome}{caracteres_random}{sobrenome}{final}@{email_create}.com'.lower())
+        print(f'\nsenha: {password}\n')
+        sys.exit(0)
 
     except KeyboardInterrupt:
         os.system('clear')
-        exit()
+        sys.exit(0)
 
 email_senha()
