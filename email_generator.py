@@ -28,8 +28,6 @@ def email_senha():
         numbers = '0123456789'
         symbols = '#@$%&*-=+/_'
 
-        os.system('clear') # CLEAR
-
         # VARS_ALL
         vars_all = lower + upper + numbers + symbols
 
